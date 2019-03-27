@@ -9,6 +9,7 @@
         <title>Hex to RGB Converter</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
@@ -20,13 +21,13 @@
             <div id="wrap">
                 <h1 class="title">Color converter</h1>
                 <div class="input-wrapper">
-                    <h2 class="title">Input color</h2>
-                    <input type="text" name="hex-value" id="hex-value" placeholder="Exemples : #FF4455, rgb(255,68,85), rgba(255,68,85,1)">
+                    <h2 class="title">Enter a color (hex, rgb or rgba)</h2>
+                    <input type="text" name="hex-value" id="hex-value" placeholder="rgb(46,100,150)">
                     <button onclick="convert()">Convert</button>
                     <p class="warn"></p>
                 </div>
                 <div class="output-wrapper">
-                    <h2 class="title">Output color</h2>
+                    <h2 class="title">Converted color code</h2>
                     <p id="result"></p>
                     <div id="color-feedback"></div>
                 </div>
