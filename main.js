@@ -144,6 +144,6 @@ function copyToClipboard() {
         info.classList.add('active');
         setTimeout(() => {
             info.classList.remove('active');
-        }, 3000);
+        }, 1000);
     }
 }
