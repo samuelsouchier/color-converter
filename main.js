@@ -21,7 +21,7 @@ function convert() {
         feedback.style.backgroundColor = result;
         document.querySelector('#main-container').style.backgroundColor = result;
         calcResult.textContent = result; 
-    } else document.querySelectorAll('.warn')[0].textContent = 'Mauvais format. Format attendu : #XXXXXX, rgb(X,X,X) ou rgba(X,X,X,X.X)';
+    } else document.querySelectorAll('.warn')[0].textContent = 'Wrong format. please enter a value as following: #XXXXXX, rgb(X,X,X) or rgba(X,X,X,X.X)';
 }
 
 function hexToInt(hex) {
