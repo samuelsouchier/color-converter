@@ -43,16 +43,18 @@ button {
     align-items: center;
 }
 #main-container {
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     background-color: rgb(46,100,150);
+    padding-bottom: 10vh;
+    padding-top: 10vh;
 }
 #wrap{
-    width: 50vh;
+    width: 50vw;
     max-width: 95%;
     padding: 50px;
     border-radius: 5px;
     background: rgba(255,255,255,0.8);
-    margin-top: 10vh;
 }
 .title{
     text-align: center;
@@ -113,7 +115,7 @@ button {
 #tip {
     margin-top: 30px;
     padding: 10px;
-    width: 50vh;
+    width: 50vw;
     max-width: 95%;
     border-radius: 5px;
     background: rgba(255,255,255,0.8);
