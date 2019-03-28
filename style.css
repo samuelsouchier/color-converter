@@ -22,6 +22,11 @@ button {
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
 }
+.github{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 #hex-value{
     padding: 10px 20px;
     border: 1px solid #fff;

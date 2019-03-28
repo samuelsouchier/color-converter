@@ -1,6 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const html = document.querySelector('html');
-    html.classList.remove('no-js');
+const html = document.querySelector('html');
+html.classList.remove('no-js');
+
+document.addEventListener("DOMContentLoaded", function() {    
     // Handle 'enter' keyup on input : trigger button click
     const input = document.getElementById('hex-value');
     input.addEventListener('keyup', function(event) {
