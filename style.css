@@ -50,7 +50,7 @@ button {
     padding-top: 10vh;
 }
 #wrap{
-    width: 50vw;
+    width: 600px;
     max-width: 95%;
     padding: 50px;
     border-radius: 5px;
@@ -78,6 +78,7 @@ button {
 .result-wrapper{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     padding: 20px;
@@ -115,7 +116,7 @@ button {
 #tip {
     margin-top: 30px;
     padding: 10px;
-    width: 50vw;
+    width: 600px;
     max-width: 95%;
     border-radius: 5px;
     background: rgba(255,255,255,0.8);
@@ -135,5 +136,8 @@ html.no-js .nojs {
     }
     #hex-value {
         margin-right: 0;
+    }
+    .btn-copy{
+        margin-top: 10px;
     }
 }
