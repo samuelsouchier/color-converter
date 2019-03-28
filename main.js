@@ -1,26 +1,22 @@
 const html = document.querySelector('html');
 html.classList.remove('no-js');
 
-document.addEventListener("DOMContentLoaded", function() {  
-    // Choose a random color and apply it to #color-feedback, #main-container and as a placeholder of #hex-value and text content of result
-    applyRandom();
+// Choose a random color and apply it to #color-feedback, #main-container and as a placeholder of #hex-value and text content of result
+applyRandom();
 
-    document.addEventListener('keyup', function (event) { 
-        if (event.keyCode === 32) {
-            applyRandom();
-        }
-     })
-    // Handle 'enter' keyup on input : trigger button click
-    const input = document.getElementById('hex-value');
-    input.addEventListener('keyup', function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("btn-convert").click();
-        }
-    });
-  });
-
-
+document.addEventListener('keyup', function (event) { 
+    if (event.keyCode === 32) {
+        applyRandom();
+    }
+    })
+// Handle 'enter' keyup on input : trigger button click
+const input = document.getElementById('hex-value');
+input.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("btn-convert").click();
+    }
+});
 
 function convert() {
     const input = document.querySelector("#hex-value").value;
@@ -132,14 +128,22 @@ function applyRandom() {
 }
 
 function copyToClipboard() {
+    const info = document.querySelector('.btn-copy');
     const txt = document.querySelector('#result').textContent;
     const ta = document.createElement('textarea');
-    ta.value = txt;
-    ta.style.position = 'absolute';
-    ta.style.opacity = 0;
-    ta.setAttribute('readonly', '');
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
+    if (!info.classList.contains('active')) {
+        ta.value = txt;
+        ta.style.position = 'absolute';
+        ta.style.opacity = 0;
+        ta.setAttribute('readonly', '');
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        
+        info.classList.add('active');
+        setTimeout(() => {
+            info.classList.remove('active');
+        }, 3000);
+    }
 }
