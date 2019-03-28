@@ -68,9 +68,9 @@ button {
     margin-top: 30px;
     align-items: center;
 }
-.result{
-    width: 200px;
+#result{
     margin-bottom: 20px;
+    margin-top: 0;
 }
 .input-form{
     display: flex;
