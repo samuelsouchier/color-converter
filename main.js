@@ -1,5 +1,17 @@
-const html = document.querySelector('html');
-html.classList.remove('no-js');
+document.addEventListener("DOMContentLoaded", function() {
+    const html = document.querySelector('html');
+    html.classList.remove('no-js');
+    // Handle 'enter' keyup on input : trigger button click
+    const input = document.getElementById('hex-value');
+    input.addEventListener('keyup', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("btn-convert").click();
+        }
+    });
+  });
+
+
 
 function convert() {
     const input = document.querySelector("#hex-value").value;
