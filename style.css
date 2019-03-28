@@ -11,13 +11,14 @@ html, body {
 h1 {
     margin-top: 0;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 button {
     cursor: pointer;
     background: rgba(255,255,255,0.8);
     border: 1px solid #fff;
     padding: 10px 20px;
+    margin-top: 10px;
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
 }
@@ -27,6 +28,8 @@ button {
     font-family: 'Raleway', sans-serif;
     border-radius: 5px;
     margin-right: 10px;
+    width: 70%;
+    margin-top: 10px;
 }
 .container{
     display: flex;
@@ -40,20 +43,41 @@ button {
 }
 #wrap{
     width: 50vh;
+    max-width: 95%;
     padding: 50px;
     border-radius: 5px;
     background: rgba(255,255,255,0.8);
     margin-top: 10vh;
 }
+.title{
+    text-align: center;
+}
+.warn {
+    font-size: 12px;
+    text-align: center;
+    color: #f44262;
+}
+.input-wrapper{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
 .output-wrapper{
     display: flex;
     flex-flow: column;
-    margin-top: 50px;
+    margin-top: 30px;
     align-items: center;
 }
 .result{
     width: 200px;
     margin-bottom: 20px;
+}
+.input-form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 #color-feedback {
     width: 200px;
@@ -78,4 +102,16 @@ button {
 
 html.no-js .nojs {
     display: initial;
+}
+
+@media (max-width: 459px) {
+    .input-form{
+        justify-content: center;
+    }
+    #hex-value, button {
+        width: 100%;
+    }
+    #hex-value {
+        margin-right: 0;
+    }
 }
