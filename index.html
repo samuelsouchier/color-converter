@@ -25,16 +25,22 @@
                 <div class="input-wrapper">
                     <h2 class="title">Enter a color (hex, rgb or rgba)</h2>
                     <div class="input-form">
-                        <input type="text" name="hex-value" id="hex-value" placeholder="rgb(46,100,150)">
+                        <input type="text" name="hex-value" id="hex-value">
                         <button id="btn-convert" onclick="convert()">Convert</button>
                     </div>
                     <p class="warn"></p>
                 </div>
                 <div class="output-wrapper">
                     <h2 class="title">Converted color code</h2>
-                    <p id="result">#2E6496</p>
+                    <div class="result-wrapper">
+                        <p id="result"></p>
+                        <button class="btn-copy" onclick="copyToClipboard()">Copy to clipboard</button>
+                    </div>
                     <div id="color-feedback"></div>
                 </div>
+            </div>
+            <div id="tip">
+                <p>Hit space to randomize color</p>
             </div>
         </div>
         <div class="nojs">

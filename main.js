@@ -1,7 +1,15 @@
 const html = document.querySelector('html');
 html.classList.remove('no-js');
 
-document.addEventListener("DOMContentLoaded", function() {    
+document.addEventListener("DOMContentLoaded", function() {  
+    // Choose a random color and apply it to #color-feedback, #main-container and as a placeholder of #hex-value and text content of result
+    applyRandom();
+
+    document.addEventListener('keyup', function (event) { 
+        if (event.keyCode === 32) {
+            applyRandom();
+        }
+     })
     // Handle 'enter' keyup on input : trigger button click
     const input = document.getElementById('hex-value');
     input.addEventListener('keyup', function(event) {
@@ -105,4 +113,33 @@ function parseRgb(color) {
         a = 1
     }
     return {r: r, g: g, b: b, a: a};
+}
+
+function randomColor () {
+    let r, g, b;
+    r = Math.floor(Math.random() * Math.floor(255));
+    g = Math.floor(Math.random() * Math.floor(255));
+    b = Math.floor(Math.random() * Math.floor(255));
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+
+function applyRandom() {
+    const random = randomColor();
+    document.querySelector('#color-feedback').style.backgroundColor = random;
+    document.querySelector('#main-container').style.backgroundColor = random;
+    document.querySelector('#hex-value').value = random;
+    document.querySelector('#result').textContent = random;
+}
+
+function copyToClipboard() {
+    const txt = document.querySelector('#result').textContent;
+    const ta = document.createElement('textarea');
+    ta.value = txt;
+    ta.style.position = 'absolute';
+    ta.style.opacity = 0;
+    ta.setAttribute('readonly', '');
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
 }
