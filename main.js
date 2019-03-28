@@ -5,14 +5,14 @@ html.classList.remove('no-js');
 applyRandom();
 
 document.addEventListener('keyup', function (event) { 
-    if (event.keyCode === 32) {
+    if (event.which === 32) {
         applyRandom();
     }
     })
 // Handle 'enter' keyup on input : trigger button click
 const input = document.getElementById('hex-value');
 input.addEventListener('keyup', function(event) {
-    if (event.keyCode === 13) {
+    if (event.which === 13) {
         event.preventDefault();
         document.getElementById("btn-convert").click();
     }
@@ -121,10 +121,12 @@ function randomColor () {
 
 function applyRandom() {
     const random = randomColor();
+    const parsedRandom = parseRgb(random);
+    const hexRandom = '#' + intToHex(parsedRandom.r) + intToHex(parsedRandom.g) + intToHex(parsedRandom.b);
     document.querySelector('#color-feedback').style.backgroundColor = random;
     document.querySelector('#main-container').style.backgroundColor = random;
     document.querySelector('#hex-value').value = random;
-    document.querySelector('#result').textContent = random;
+    document.querySelector('#result').textContent = hexRandom;
 }
 
 function copyToClipboard() {
